@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  <script src="./js/openseadragon.min.js"></script>
+<script Language="javaScript">
+function addMyOverlay(refArray,arrLng,despX,despY,reasonX,reasonY)
+{
+for (i = 1; i < arrLng; i++)
+	{
+	var ele = "div_" + refArray_global(i,2) + "_" + i;
+	var x1 = (refArray_global(i,0) - despX) * reasonX;
+	var y1 = 1 - ((refArray_global(i,1) - despY) * reasonY);
+	calyviewer.addOverlay({element: ele,location: new OpenSeadragon.Point(x1,y1)});
+	}
+}
+function newMap(row,col)
+{
+//calyviewer.open("maps/" + str_locs_names(row,col) + ".dzi");
+calyviewer.open("maps\\" + nameMap + ".dzi");
+}
+</script>
+ 
+    <meta charset="UTF-8">
+    <title>Entropia Maps</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body  onresize="checkHeight();checkWidth();" style="font-family: Arial,Helvetica,Sans-Seriff;">
+<!-- Screen Section --> 
+<div class="panel" id="Panel1" style="position: relative; display:block; text-align: center; margin: 10px;; border:thin groove;">
+	<span class="head" id="titlemap_0"></span>
+    <span id="positionEl" class="coord_span"></span>
+	<hr color="black" />
+	<div id="selectFiltersDiv" classid="Forms" draggable="auto" style="position: relative; border:thin groove; text-align: center; margin-right:1%; margin-left:1%;; margin-bottom:1%;">
+		<input id="rldMap" type="button" value='Reload current map' onclick="changemap(chngMap.value)" style="display=block" />
+		<select name="chngMap" id="chngMap" onchange="changemap(this.value)"></select>
+		<input id="addWaypoint" type="button" value='Add a Waypoint' onclick="editWaypoint(chngMap.value,'altas')" style="display=block" />
+		<br>Click the secondary button over any waypoint marker to open an edit menu. Ctrl+secondary to copy the waypoint.
+	</div>
+	<div id="calymap" style="position: relative; height:400px;" class="openseadragon"></div>
+</div>
+<!-- Screen Section -->
+    <script src="js/neutralino.js"></script>
+    <script src="js/main.js"></script>
+	<div id="listWaypoints" class="accordion vertical" style="display:block;position: absolute;overflow: auto; top: 50px; width: 199px";">
+	</div>
+<div class="panel" id="status" style="display:block;"></div>
+<div class="menus" id="contextMenu" style="visibility: hidden;" onmouseleave="fading(this.id,1,0.1,0,Number(this.style.opacity));document.getElementById('tableMenu').remove();">
+</div>
+<div class="Forms" id="dataInput" style="position: absolute; visibility: hidden; top: 0px;">
+<form action="javascript:void(0);" method="post">
+    <table id="tableRecord" style="width: 90%; border=1; text-align: center; visibility: inherit;">
+      <tbody>
+        <tr id="rowClip" style="visibility: hidden">
+		<td style="text-align: center;"><button name="btnClip" value="" type="button" onclick="copyClip()">Clipboard Text</button></td>
+		<td style="text-align: center;"><input id="clipText" name="clipText" size="50" type="text"></td>
+		<td style="text-align: center;"><button name="btnClip" value="" type="button" onclick="parseClip()">Fill with Clipboard</button></td>
+        </tr>
+        <tr align="center">
+		<td id="mapInput" colspan="3"><select name="inputMap" id="inputMap"></select></td>
+        </tr>		
+        <tr>
+		<td style="text-align: center;">Longitude</td>
+		<td style="text-align: center;">Latitude</td>
+		<td style="text-align: center;">Altitude</td>
+        </tr>
+        <tr>
+		<td style="text-align: center;"><input id="longInput" name="longInput" min="0" step="1"type="number" required></td>
+		<td style="text-align: center;"><input id="latInput" name="latInput" min="0" type="number" required></td>
+		<td style="text-align: center;"><input id="altInput" name="altInput" min="0" type="number" required></td>
+        </tr>
+        <tr>
+		<td style="text-align: center;">Name</td>
+		<td style="text-align: center;">Type</td>
+		<td style="text-align: center;">Additional info</td>
+        </tr>
+        <tr>
+		<td style="text-align: center;"><input id="namInput" name="namInput" type="text" required></td>
+		<td style="text-align: center;"><select id="typeInput" name="typeInput" required>
+		<option value="Revival">Revival</option>
+		<option value="Estate">Estate</option>
+		<option value="POI">POI</option>
+		<option value="Mission Broker">Mission Broker</option>
+		<option value="Outpost">Outpost</option>
+		<option value="Teleport">Teleport</option>
+		<option value="Mission">Mission</option>
+		<option value="Mob">Mob</option>
+		<option value="Instance">Instance</option>
+		<option value="Resource">Resource</option>
+		</select>
+		</td>
+		<td style="text-align: center;"><input id="othrInput" name="othrInput" type="text" required></td>
+        </tr>
+        <tr align="center">
+		<td id ="cellActions"></td>
+		<td style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td style="text-align: center;"><button name="btnClose" onclick="fading('dataInput',1,0.1,0,1);fading('rowClip',1,0.1,0,1);document.getElementById('btnRecord').remove();;return false;">Cancel</button></td>
+        </tr>
+      </tbody>
+    </table>
+</form>	
+</div>	
+  </body>
+</html>

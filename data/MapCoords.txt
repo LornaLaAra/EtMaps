@@ -1,0 +1,23 @@
+Lon Lat				TopLeft		TopRight		BottomLeft		BottomRight
+
+Rocktropia		131072,98303	139264,98303	131072,81935	139264,81935
+
+Arkadia Moon	Top:16381 Bottom:8205 Right:16373 Left:8197
+
+		var x1 = (coords[0] - despX);
+		x1 = x1*reasonX;
+		x1 = 1+(x1/mapX);
+		var y1 = (despY - coords[1]);
+		y1 = y1*reasonY;
+		y1 = y1/mapY;
+		calyviewer.addOverlay({element: div_overlay,location: new OpenSeadragon.Point(x1,y1)});
+
+
+		var reasonX	= imgW/(east - west);
+		var x1 = (coords[0] - west)*reasonX;
+		x1 = x1/imgW;
+
+		var reasonY	= imgH/(north - south);
+		var y1 = (north - coords[1])*reasonY;
+		y1 = y1/imgH;
+		calyviewer.addOverlay({element: div_overlay,location: new OpenSeadragon.Point(x1,y1)});

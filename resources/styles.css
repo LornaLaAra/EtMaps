@@ -1,0 +1,219 @@
+html, body{
+	margin: 0px;
+	padding: 0px;
+}
+
+#neutralinoapp {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #FFD700;
+}
+
+#neutralinoapp h1 {
+	position: relative;
+	float: left;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: Arial;
+	font-size: 48px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.coord_span {
+	position: relative;
+	float: left;
+	font-family: Arial,Helvetica,Sans-Seriff;
+	font-size: 1em;
+	padding: 0px;
+	margin: 0px;
+	color:#1111FF;
+}
+.msgFloat
+{
+	padding: 5px;
+	text-align: center;	
+}
+.msgBox
+{
+	border-radius:5px;
+	font-size:13px;
+	background:#FCFCFC;
+	border:1px solid #542437;
+	padding: 5px;
+	text-align: center;
+}
+.menus
+{
+	border-radius:5px;
+	font-size:13px;
+	background:#FCFCFC;
+}
+.contextEl
+{
+	height:26px;
+	cursor:pointer;
+	vertical-align: middle;
+}
+.menuEl:hover
+{
+	background:#F0F0F0;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+/*
+*
+*	Author:	Michael Raffaele <michael@mraffaele.com>
+*	Date:	25th October 2011
+*	Info:	 http://www.mraffaele.com/blog/2011/10/25/css-accordion-no-javascript/
+*
+*/
+/* Shared for all accordion types */
+.accordion {
+	font-family:Arial, Helvetica, sans-serif; 
+	margin:0 auto;
+	font-size:12px;
+	border:1px solid #542437;
+	border-radius:5px;
+	width:80%;
+	padding:10px;
+	background:#fff;
+}
+.accordion ul {
+	list-style:none;
+	margin:0;
+	padding:0;	
+}
+.accordion li {
+	margin:0;
+	padding:0;
+}
+.accordion [type=radio], .accordion [type=checkbox] {
+	display:none;
+}
+.accordion label {
+	display:block;
+	font-size:12px;
+	line-height:12px;
+	background:#0073AA;
+	border:1px solid #542437;
+	color:#FFFFFF;
+	text-shadow:1px 1px 1px rgba(255,255,255,0.3);
+	font-weight:100;
+	cursor:pointer;
+	text-transform:uppercase;
+	-webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+}
+.accordion ul li label:hover, .accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
+	background:#00A0D2;
+	color:#FFF;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.5)
+}
+.accordion .content {
+	padding:0 10px;
+	overflow:hidden;
+	border:1px solid #fff; /* Make the border match the background so it fades in nicely */
+	-webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+}
+.accordion p {
+	color:#333;
+	margin:0 0 10px;
+}
+.accordion h3 {
+	color:#FFFFFF;
+	padding:0;
+	margin:10px 0;
+}
+
+
+/* Vertical */
+.vertical ul li {
+	overflow:hidden;
+	margin:0 0 1px;
+}
+.vertical ul li label {
+	padding:10px;
+}
+.vertical [type=radio]:checked ~ label, .vertical [type=checkbox]:checked ~ label {
+	border-bottom:0;
+}
+.vertical ul li label:hover {
+	border:1px solid #0073AA; /* We don't want the border to disappear on hover */
+}
+.vertical ul li .content {
+	height:0px;
+	border-top:0;
+}
+.vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
+	height:250px;
+	overflow: auto;
+	border:1px solid #0073AA;
+}
+
+/* ------------------------------------------
+PURE CSS SPEECH BUBBLES
+by Nicolas Gallagher
+- http://nicolasgallagher.com/pure-css-speech-bubbles/
+
+http://nicolasgallagher.com
+http://twitter.com/necolas
+
+Created: 02 March 2010
+Version: 1.2 (03 March 2011)
+
+Dual licensed under MIT and GNU GPLv2 Nicolas Gallagher
+------------------------------------------ */
+.example-obtuse {
+	position:relative;
+	padding:15px 30px;
+	margin:0;
+	color:#000;
+	background:#00A0D2; /* default background for browsers without gradient support */
+	/* css3 */
+	background:linear-gradient(#00AFDF, #0073AA);
+	
+}
+
+/* display of quote author (alternatively use a class on the element following the blockquote) */
+.example-obtuse + p {margin:10px 10px 10px 0; text-align:justify; font-style:italic;}
+
+/* creates the larger triangle */
+.example-obtuse:before {
+	content:"";
+	position:absolute;
+	bottom:-15px;
+	right:105px;
+	border-width:0 0 15px 50px;
+	border-style:solid;
+	border-color:transparent #0073AA;
+	/* reduce the damage in FF3.0 */
+	display:block;
+	width:0;
+}
+
+/* creates the smaller triangle */
+.example-obtuse:after {
+	content:"";
+	position:absolute;
+	bottom:-15px;
+	right:135px;
+	border-width:0 0 15px 20px;
+	border-style:solid;
+	border-color:transparent;
+	/* reduce the damage in FF3.0 */
+	display:block;
+	width:0;
+}

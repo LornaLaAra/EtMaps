@@ -1,0 +1,124 @@
+# ET Maps
+
+Entropia Mapping readme file.
+Version 0.3.0b January 2022
+Licensed under CC http://creativecommons.org/licenses/by/4.0/#
+*You can copy or use this software freely if you share it in the same terms. For commercial uses contact the author.
+*OpenSeadragron is under Free BSD license.*
+URL: http://lorna.chafalladas.com/ETail
+
+## Disclaimer.
+
+This software is free for use and copy, the source can be modified as needed and redistributed under the same CC license as long as the author is recognized.
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT ANY GUARANTEE MADE AS TO ITS SUITABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE. IF YOU CHOOSE TO USE IT, YOU DO SO ENTIRELY AT YOUR OWN RISK.
+THE AUTHOR TAKES NO RESPONSIBILITY FOR ANY DAMAGE THAT MAY DIRECTLY OR INDIRECTLY BE CAUSED THROUGH ITS USE OR MISUSE.
+IF YOU DO NOT OR CANNOT ACCEPT THESE TERMS FOR WHATEVER REASON, DO NOT USE THIS SOFTWARE.
+NO FEE MAY BE CHARGED FOR SUCH DISTRIBUTION OR FOR THE SOFTWARE WITHOUT PRIOR PERMISSION FROM THE AUTHOR.
+
+## Objective of this software.
+
+   Zoomable mapping helper with editable locations.
+
+## Requirements:
+
+   - Windows 8 or higher running in an x64 system.
+      Its recomended installing Web2view to run faster the program.
+   
+   https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download-section
+
+## Installation:
+
+This program is made in Neutralinojs, a javasript compiler that turns Javascript code into executable programs.
+Neutralinojs is uses the javascript engine son you will need to allow its scripts execution manually. A command processor batch is provided to ease the process.
+
+   - Download the 7zip file and copy the files in a directory of your choosing.
+   - You must run the batch file **"unblockApp.cmd" **as Administrator to unblock the execution of javascript locally.
+   - Download and install Web2view, not mandatory bur reecomended to have a smoother execution. https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download-section
+   - The executable file is "EtMaps-win_x64.exe". There are other binaries intended to run in Mac and Linux.
+
+## Usage:
+
+   - Launch EtMaps-win_x64.exe. The default map is Calypso.
+   - At the top you will see two buttons and one selectable list.
+   - The button "Reload current map" will open again the map selected in the list if the first load fails.
+   - In the selectable list you can choose what map to load. These maps are stored in the "resources.neu" file.
+   - The "Add a waypoint map" will open a form to add new waypoint to a map.
+   - The map can be zoomed in and out with the mouse wheel.
+   - The map will display several icons, each one representing a waypoint. There are different types of icons, representing a type of waypoint. If you click on an icon, it will display a label with additional infomation about the waypoint.
+   - At the right o the window you will se an interactive menu where you can see the waypoint names and select their visibility.
+   - Either in the map or in the list you can open a submenu with the secondary button. This submenu will offer you the choice of copying the waypoint link to the clipboard, modify or delete it.
+   - There is a status bar at the bottom that will display relevant information, such as the las waypoint copied.
+   - At the top left you coud see the map longitude and latitude coordinates where the mouse is moving.
+
+#### Copying a waypoint to the clipboard.
+
+  There are two ways to copy a waypoint to the clipboard.
+
+   1. -Press the ctrl key and simultaneously the secondary button of your mouse (right is default, left you configured if inverse buttons). A message will flash and you can see the text copied in the status bar.
+   2. -Press the secondary button of your mouse and select the "Copy to clipboard option.
+   
+#### Adding a new waypoint.
+  - Brief. Copy a waypoint from the clipboard using "Clipboar text" button, if the text isn't already copied. Select the map you will be adding the waypoint into. Fill the fields with "Fill clipboard". Put a personalized name to the waypoint in the "Name" field. Select the type of waypoint in dthe select field below "Type" text. Fill the additional nfo field if you like. Press the "Add waypoint" button and accept the prompt.
+  - This is a valid waypoint to copy. "[Thule, 68460, 70759, 150, Flight Data Recorder]", "/wp [...]" links are also valid.
+  
+  1. - Press the "Add a waypoint" button. A form will be displayed with several fields and selectable lists. Ther will be also four buttons. From left to right, and top to bottom the following are the description and use of that fields and buttons.
+   a. - Button "Clipboard text". You can copy to the text field to its right, the text data that is curently in the clipboard. Use it to prepare the data to be parsed, any text that is not a Entropia Universe waypoint or waypoint link will give corrupted data.
+   b. - Input text of copied text. The text here will be used to fill the waypoint data, be sure that is a valid waypoint like the ones described before.
+   c. -
+#### Modifying a waypoint.
+
+#### Deleting a waypoint.
+
+## Files provided in the release.
+
+#### Files in main dir:
+
+   - EtMaps-linux_x64 -Linux executable.
+   - EtMaps-mac_x64 -Mac executable.
+   - EtMaps-win_x64.exe -Windows executable.
+   - WebView2Loader.dll -Windows dinamic link library to invoke web viewer.
+   - resources.neu -Data files, icons and maps compressed in ASAR format.
+   - unblockApp.cmd -Batch file to unblock the execution of Neutralinojs javascript.
+  - sources.7z -Source code of the app and Openseadragon. This not include the map files and other resource files. Thay can be found in the git page of the project or extracted from the resources.neu file.
+  - readme.md -This file.
+  - License.txt -License of the program.
+
+#### Files in data dir:
+
+  Data files, contains the wayponts and data of each map.  
+
+      - Ancient Greece.csv
+      - Arkadia Moon.csv
+      - Arkadia underground.csv
+      - Arkadia.csv
+      - Asteroid.csv
+      - Calypso.csv
+      - Crystal palace.csv
+      - Cyrene.csv
+      - Dsec-9.csv
+      - Howling mine.csv
+      - Monria.csv
+      - Next Island.csv
+      - Rocktropia.csv
+      - Secret Island.csv
+      - Space station standard.csv
+      - Space.csv
+      - The hub.csv
+      - Thule.csv
+      - Toulan.csv
+   Some data related to the maps dimensions.
+      - MapCoords.txt
+      - transformations.txt
+
+# Built with OpenSeadragon
+
+OpenSeadragon
+https://github.com/openseadragon/openseadragon/
+
+# Icon credits
+
+- `trayIcon.png` - Made by [Freepik](https://www.freepik.com) and downloaded from [Flaticon](https://www.flaticon.com)
+- `Icons from` - Silk Icons by FamFamFam https://iconarchive.com/show/silk-icons-by-famfamfam.2.html
+- `and` - Fugue Icons by Yusuke Kamiyamane https://iconarchive.com/show/fugue-icons-by-yusuke-kamiyamane.35.html
+- `and` - Jonatan Castro Fernández © 2009 - midtone design http://www.midtonedesign.com
+- `and` - http://www.fatcow.com/free-icons
